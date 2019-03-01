@@ -1,0 +1,27 @@
+//  https://github.com/salazarr-js/v-calculator
+
+new Vue({
+  el: '#calculator',
+  data: {
+    value: 0,
+    logs:  []
+  },
+  methods: {
+    addExpresion(e) {
+      if ( Number.isInteger(this.value) )
+        this.value = ''; 
+      this.value += e;
+    },
+    getResult() {
+      let log: string = this.value;
+      this.value = eval(this.value);
+      this.logs.push( log + `=${this.value}` );
+    },
+    clear() {
+      this.value = 0;
+    },
+    del() {
+      this.value = this.value.slice(0, -1);
+    }
+  }
+})

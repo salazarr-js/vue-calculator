@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>v-calculator</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!--  https://github.com/salazarr-js/v-calculator  -->
+
+<div id="calculator">
+
+  <div class="calculator-logs">
+    <span v-for="log in logs">{{ log }}</span>
+  </div>
+
+  <input type="string" class="calculator-input" v-model="value" @keyup.enter="getResult()">
+
+  <div class="calculator-row">
+    <div class="calculator-col">
+      <button class="calculator-btn gray action" @click="clear()">C</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn gray action" @click="del()">del</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn gray action" @click="addExpresion('%')">%</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn accent action" @click="addExpresion('/')">/</button>
+    </div>
+  </div>
+  <div class="calculator-row">
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(7)">7</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(8)">8</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(9)">9</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn accent action" @click="addExpresion('*')">*</button>
+    </div>
+  </div>
+  <div class="calculator-row">
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(4)">4</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(5)">5</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(6)">6</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn accent action" @click="addExpresion('-')">-</button>
+    </div>
+  </div>
+  <div class="calculator-row">
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(1)">1</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(2)">2</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn" @click="addExpresion(3)">3</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn accent action" @click="addExpresion('+')">+</button>
+    </div>
+  </div>
+  <div class="calculator-row">
+    <div class="calculator-col wide">
+      <button class="calculator-btn" @click="addExpresion(0)">0</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn action" @click="addExpresion('.')">.</button>
+    </div>
+    <div class="calculator-col">
+      <button class="calculator-btn accent action" @click="getResult()">=</button>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
